@@ -1,0 +1,65 @@
+# .gitignore
+
+# Entorno virtual de Python
+env/
+venv/
+ENV/
+*.env
+
+# Archivos compilados de Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Configuración del entorno de desarrollo de Django
+db.sqlite3
+/media
+
+# Archivos de configuración de Django
+*.log
+*.pot
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+*.tmp
+*.bak
+*.swp
+*.swo
+*.orig
+*.~*
+
+# Archivos de instalación de paquetes
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Directorios de desarrollo locales
+*.idea
+*.vscode
+*.pytest_cache/
+.coverage
+.tox/
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+*.mo
+
+# Configuración del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Archivos de construcción de React
+/build
+/.cache
+/coverage
+.log/
