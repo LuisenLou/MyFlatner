@@ -8,7 +8,7 @@ function Navbar(){
                 {/*Have to be changed into img*/}
             <div className="-ml-4 -mt-2 flex flex-wrap items-center justify-between sm:flex-nowrap md:px-14">
                 <div className="ml-4 mt-2">
-                <h3 className="text-lg font-medium leading-6 text-gray-900">FLatner</h3>
+                <h3 className="text-lg font-medium leading-6 text-gray-900">Flatner</h3>
                 </div>
                 <div className="ml-4 mt-2 flex-shrink-0">
                 <Link to='/Home' className="text-lg inline-flex font-medium leading-6 text-gray-900 mx-4">Home</Link>
