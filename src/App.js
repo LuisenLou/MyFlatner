@@ -23,6 +23,7 @@ function App() {
             <Route path='/nosotros' element={<AboutUs/>}/>
             <Route path='/contacto' element={<Communicate/>}/>
             
+            
           </Routes>
         </Router>
     </Provider>

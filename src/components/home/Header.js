@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import { Typewriter } from 'react-simple-typewriter'
 
 
@@ -32,8 +33,8 @@ function Header(){
             </h1>
             <p class="mt-8 text-lg leading-8 text-gray-600"> Búsqueda de habitaciones, compañeros de piso y control de incidencias del propietario con FLATNER</p>
             <div class="mt-14 flex items-center justify-center gap-x-6">
-              <a href="#" class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Get started</a>
-              <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Learn more <span aria-hidden="true">→</span></a>
+              <NavLink href="#" class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Instalar App</NavLink>
+              <NavLink to="/nosotros" class="text-sm font-semibold leading-6 text-gray-900">Saber mas <span aria-hidden="true">→</span></NavLink>
             </div>
           </div>
         </div>

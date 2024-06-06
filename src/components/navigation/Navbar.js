@@ -1,9 +1,29 @@
 import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
 
+
+
+
+
 function Navbar(){
+
+    window.onscroll = function(){scrollFunction()}
+
+    function scrollFunction(){
+        if(document.getElementById('navbar')){
+            if(document.body.scrollTop>50 || document.documentElement.scrollTop>50){
+                document.getElementById('navbar').classList.add('shadow-navbar')
+                document.getElementById('navbar').classList.add('bg-white')
+            }else{
+                document.getElementById('navbar').classList.remove('shadow-navbar')
+                document.getElementById('navbar').classList.remove('bg-white')
+            }
+        }
+    }
+
+
     return (
-        <nav className="w-full h-50 top-0 bg-white transition duration-300 fixed ease-in-out z-50">     
+        <nav id='navbar' className="w-full py-2 top-0 transition duration-300 fixed ease-in-out z-50">     
             <div className="ml-4 mt-2 mb-5 flex flex-wrap items-center justify-between sm:flex-nowrap md:px-14">
                 <div className="ml-4 mt-2">
                     {/*Have to be changed into img*/}
