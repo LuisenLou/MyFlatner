@@ -93,7 +93,7 @@ const navigation = {
 
 function Footer(){
     return (
-        <footer className="bg-white" aria-labelledby="footer-heading">
+        <footer className="bg-gray-50" aria-labelledby="footer-heading">
         <h2 id="footer-heading" className="sr-only">
           Footer
         </h2>
@@ -106,7 +106,7 @@ function Footer(){
                 alt="Company name"
               />
               <p className="text-base text-gray-500">
-                Making the world a better place through constructing elegant hierarchies.
+                Making relationships with people easier.
               </p>
               <div className="flex space-x-6">
                 {navigation.social.map((item) => (
