@@ -24,6 +24,7 @@ function App() {
             <Route path='/nosotros' element={<AboutUs/>}/>
             <Route path='/contacto' element={<Communicate/>}/>
 
+            {/*Sesion display*/}
             <Route path='/sesion' element={<Sign/>}/>
             
             
