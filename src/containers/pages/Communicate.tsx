@@ -8,9 +8,9 @@ function Communicate(){
     return(
         <Layout>
             <Navbar/>
-            <div className='pt-28'>
+            <div className='pt-28 bg-gradient-to-b from-emerald-100 to-white'>
                 <form>
-                    <div className="space-y-12 mx-auto max-w-4xl items-center sm:py-10 lg:py-2 px-5">
+                    <div className="space-y-12 mx-auto max-w-4xl items-center sm:py-10 lg:py-2 px-5 bg-gradient-to-b from-emerald-100 to-white">
                         <div className="border-b border-gray-900/10 pb-12">
                             <div className="border-b border-gray-900/10 pb-12">
                                 <h2 className="text-base font-semibold leading-7 text-gray-900">La siguiente información proporcionada se usará con fines al uso requerido por el solicitante.</h2>
@@ -25,7 +25,7 @@ function Communicate(){
                                                     name="first-name"
                                                     id="first-name"
                                                     autoComplete="given-name"
-                                                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                                    className="block w-full rounded-md bg-gray-50 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                                     />
                                                 </div>
                                         </div>
@@ -40,7 +40,7 @@ function Communicate(){
                                                     name="last-name"
                                                     id="last-name"
                                                     autoComplete="family-name"
-                                                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                                    className="block w-full rounded-md bg-gray-50 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                                     />
                                                 </div>
                                         </div>
@@ -55,7 +55,7 @@ function Communicate(){
                                                     name="email"
                                                     type="email"
                                                     autoComplete="email"
-                                                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                                    className="block w-full rounded-md bg-gray-50 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                                     />
                                                 </div>
                                         </div>
@@ -69,7 +69,7 @@ function Communicate(){
                                                     id="country"
                                                     name="country"
                                                     autoComplete="country-name"
-                                                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
+                                                    className="block w-full rounded-md bg-gray-50 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
                                                     >
                                                         <option>España</option>
                                                         <option>Portugal</option>
@@ -91,7 +91,7 @@ function Communicate(){
                                                     name="city"
                                                     id="city"
                                                     autoComplete="address-level2"
-                                                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                                    className="block w-full rounded-md bg-gray-50 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                                     />
                                                 </div>
                                         </div>
@@ -106,7 +106,7 @@ function Communicate(){
                                                     name="region"
                                                     id="region"
                                                     autoComplete="address-level1"
-                                                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                                    className="block w-full rounded-md bg-gray-50 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                                     />
                                                 </div>
                                         </div>
@@ -121,7 +121,7 @@ function Communicate(){
                                                     name="street-address"
                                                     id="street-address"
                                                     autoComplete="street-address"
-                                                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                                    className="block w-full rounded-md bg-gray-50 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                                     />
                                                 </div>
                                         </div>
@@ -136,7 +136,7 @@ function Communicate(){
                                                     name="postal-code"
                                                     id="postal-code"
                                                     autoComplete="postal-code"
-                                                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                                    className="block w-full rounded-md bg-gray-50 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                                     />
                                                 </div>
                                         </div>
@@ -149,7 +149,7 @@ function Communicate(){
                                                     id="description"
                                                     name="description"
                                                     rows={3}
-                                                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                                    className="block w-full rounded-md bg-gray-50 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                                     defaultValue={''}
                                                     />
                                                 </div>
@@ -159,13 +159,13 @@ function Communicate(){
                                 <div className="my-10 flex items-center justify-center gap-x-6">
                                     <button 
                                         type="button" 
-                                        className="text-sm font-semibold leading-6 text-gray-900"
+                                        className="rounded-md bg-gray-200 px-3 py-3 text-sm font-semibold leading-6 text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600"
                                     >
                                     Cancelar
                                     </button>
                                     <button
                                         type="submit"
-                                        className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                                        className="rounded-md bg-emerald-600 px-4 py-3 text-sm font-semibold text-white shadow-sm hover:bg-emerald-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600"
                                     >
                                     Enviar
                                     </button>

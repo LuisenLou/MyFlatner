@@ -7,8 +7,8 @@ function AboutUs(){
     return(
         <Layout>
             <Navbar/>
-            <div className='pt-28 pb-28'>
-                <div className="items-center justify-center">
+            <div className='pt-16'>
+                <div className="items-center space-y-10 justify-center bg-gradient-to-b from-emerald-100 to-white pt-10">
                     <div className="text-black-500 px-20 mx-20">
                         <p className="mt-4">Bienvenido a nuestra aplicación, donde la conexión entre propietarios e inquilinos se convierte en la clave para una experiencia de convivencia enriquecedora y confiable. Creemos firmemente en los beneficios de una comunidad bien conectada, donde todos se sientan valorados y apoyados.</p>
                     </div>
@@ -22,7 +22,13 @@ function AboutUs(){
                         <p className="mt-4 text-black-500">Al promover una cultura de respeto, empatía y cooperación, nuestra aplicación no solo mejora la experiencia de convivencia, sino que también contribuye a un ambiente más armonioso y positivo para todos. Únete a nuestra comunidad hoy y descubre cómo la conexión puede transformar tu experiencia de vida compartida. ¡Te damos la bienvenida a un mundo de confianza y coliving mejorado!</p>
                     </div>
                 </div>
+                <div className="flex min-h-full bg-red-100 flex-col justify-center mt-7 px-6 py-16 lg:px-8">
+                    <div className='flex px-6 bg-red-500 py-12 lg:px-10'>
+                        <p className="mt-4 text-black-500">Per</p>
+                </div>
             </div>
+            </div>
+            
             <Footer/>  
         </Layout>
     )
