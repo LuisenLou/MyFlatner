@@ -3,6 +3,15 @@
 @tailwind utilities;
 
 
+:root {
+  --color-azul-marino: #2C3E50;
+  --color-azul-claro: #3498DB;
+  --color-blanco: #FFFFFF;
+  --color-gris-claro: #ECF0F1;
+  --color-verde-esmeralda: #2ECC71;
+  --color-gris-oscuro: #95A5A6;
+}
+
 .active{
     @apply border-indigo-500
 }
