@@ -7,30 +7,43 @@ import Error404 from "containers/error/Error404";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "store";
-
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 function App() {
+  
   return (
+    <HelmetProvider>
+      <Helmet>
+        <title>Flatner | Room Partner App</title>
+        <meta name='description' content='Contact with owners and other tenants at the easiest way'/>
+        <meta name='keywords' content='pisos, habitaciones, propietario, inquilino'/>
+        <meta name='author' content='LuisenLou'/>
+        <meta name='publisher' content='Flatner'/>
+        
+        
+        <link rel='can' href='https://localhost:8000'/>
+      </Helmet>
+      <Provider store={store}>
+          <Router>
+            <Routes>
+              {/*Error display*/}
+              <Route path='*' element={<Error404/>}/>
+              
+              {/*Pages display*/}
+              <Route path='/' element={<Home/>}/>
+              <Route path='/busqueda' element={<Search/>}/>
+              <Route path='/nosotros' element={<AboutUs/>}/>
+              <Route path='/contacto' element={<Communicate/>}/>
 
-    <Provider store={store}>
-        <Router>
-          <Routes>
-            {/*Error display*/}
-            <Route path='*' element={<Error404/>}/>
-            
-            {/*Pages display*/}
-            <Route path='/' element={<Home/>}/>
-            <Route path='/busqueda' element={<Search/>}/>
-            <Route path='/nosotros' element={<AboutUs/>}/>
-            <Route path='/contacto' element={<Communicate/>}/>
-
-            {/*Sesion display*/}
-            <Route path='/sesion' element={<Sign/>}/>
-            
-            
-          </Routes>
-        </Router>
-    </Provider>
+              {/*Sesion display*/}
+              <Route path='/sesion' element={<Sign/>}/>
+              
+              
+            </Routes>
+          </Router>
+      </Provider>
+    </HelmetProvider>
+    
    
   );
 }

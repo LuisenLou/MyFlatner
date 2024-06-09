@@ -39,10 +39,10 @@ function Navbar(){
                         <p>Flatner</p>
                     </Link>
                     <div className="ml-4 mt-2 flex-shrink-0">
-                        <NavLink to='/' className="text-lg inline-flex font-medium leading-6 text-violet-50 border-b-2 border-white hover:border-emerald-500 mx-4">Home</NavLink>
-                        <NavLink to='/busqueda' className="text-lg inline-flex font-medium leading-6 text-violet-50 border-b-2 border-white hover:border-emerald-500 mx-4">Search</NavLink>
-                        <NavLink to='/nosotros' className="text-lg inline-flex font-medium leading-6 text-violet-50 border-b-2 border-white hover:border-emerald-500 mx-4">About Us</NavLink>
-                        <NavLink to='/contacto' className="text-lg inline-flex font-medium leading-6 text-violet-50 border-b-2 border-white hover:border-emerald-500 mx-4">Contact</NavLink>
+                        <NavLink to='/' className="text-lg inline-flex font-medium leading-6 text-violet-50 border-b-2 border-white hover:border-emerald-500 mx-4">Inicio</NavLink>
+                        <NavLink to='/busqueda' className="text-lg inline-flex font-medium leading-6 text-violet-50 border-b-2 border-white hover:border-emerald-500 mx-4">Mapa</NavLink>
+                        <NavLink to='/nosotros' className="text-lg inline-flex font-medium leading-6 text-violet-50 border-b-2 border-white hover:border-emerald-500 mx-4">Nosotros</NavLink>
+                        <NavLink to='/contacto' className="text-lg inline-flex font-medium leading-6 text-violet-50 border-b-2 border-white hover:border-emerald-500 mx-4">Contacto</NavLink>
                         <Link to='/sesion'>
                             <button
                                 className="ml-6 w-full sm:w-auto relative px-3 py-3 inline-flex items-center rounded-md border border-transparent bg-emerald-500 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2"

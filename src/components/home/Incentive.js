@@ -26,43 +26,45 @@ const incentives = [
     },
   ]
 
-  export default function Incentives() {
-    return (
-      <div className="bg-gradient-to-t from-emerald-100 to-white">
-        <div className="mx-auto lg:mx-12 max-w-full py-24 sm:px-2 sm:py-32 lg:px-4">
-          <div className="mx-auto max-w-2xl px-4 lg:max-w-none">
-            <div className="max-w-3xl">
-                <h2 className="text-4xl font-bold tracking-tight text-gray-900">
-                    Facilitamos la interacción entre personas.
-                </h2>
-                <p className="mt-4 text-gray-500">
-                    En Flatner, estamos transformando la forma en que las personas encuentran y comparten espacios para vivir. Nos dedicamos a conectar propietarios de pisos con individuos que buscan habitaciones para compartir, ofreciendo una experiencia de búsqueda simple y eficiente.
-                </p>
-                <p className="mt-4 text-gray-500"> 
-                    Con nuestra plataforma intuitiva, puedes explorar una amplia variedad de opciones de alojamiento en diferentes ubicaciones, desde apartamentos urbanos hasta acogedoras casas compartidas. Nuestro objetivo es hacer que el proceso de encontrar un compañero de piso sea fácil, seguro y sin complicaciones.
-                </p>
-                <p className="mt-4 text-gray-500"> 
-                    Además de facilitar la búsqueda de alojamiento, en Flatner también ofrecemos servicios adicionales para hacer que la experiencia de vivir compartiendo sea aún más placentera. Desde asistencia en la búsqueda de compañeros de piso compatibles hasta ayuda con el proceso de mudanza, estamos aquí para ayudarte en cada paso del camino.
-                </p>
-                <p className="mt-4 text-gray-500">
-                    Únete a nuestra comunidad en línea y descubre la comodidad y la emoción de vivir en un entorno compartido. ¡Empieza tu búsqueda hoy mismo en Flatner!
-                </p>
-            </div>
-            <div className="mt-16 grid grid-cols-1 gap-y-10 gap-x-8 lg:grid-cols-3">
-              {incentives.map((incentive) => (
-                <div key={incentive.name} className="sm:flex lg:block">
-                  <div className="sm:flex-shrink-0">
-                    <img className="h-16 w-16" src={incentive.imageSrc} alt="" />
-                  </div>
-                  <div className="mt-4 sm:mt-0 sm:ml-6 lg:mt-6 lg:ml-0">
-                    <h3 className="text-sm font-medium text-gray-900">{incentive.name}</h3>
-                    <p className="mt-2 text-sm text-gray-500">{incentive.description}</p>
-                  </div>
+function Incentives() {
+  return (
+    <div className="bg-gradient-to-t from-emerald-100 to-white">
+      <div className="mx-auto lg:mx-12 max-w-full sm:px-2 sm:py-32 lg:px-4">
+        <div className="mx-auto max-w-2xl px-4 lg:max-w-none">
+          <div className="max-w-3xl">
+              <h2 className="text-4xl font-bold tracking-tight text-gray-900">
+                  Facilitamos la interacción entre personas.
+              </h2>
+              <p className="mt-4 text-gray-500">
+                  En Flatner, estamos transformando la forma en que las personas encuentran y comparten espacios para vivir. Nos dedicamos a conectar propietarios de pisos con individuos que buscan habitaciones para compartir, ofreciendo una experiencia de búsqueda simple y eficiente.
+              </p>
+              <p className="mt-4 text-gray-500"> 
+                  Con nuestra plataforma intuitiva, puedes explorar una amplia variedad de opciones de alojamiento en diferentes ubicaciones, desde apartamentos urbanos hasta acogedoras casas compartidas. Nuestro objetivo es hacer que el proceso de encontrar un compañero de piso sea fácil, seguro y sin complicaciones.
+              </p>
+              <p className="mt-4 text-gray-500"> 
+                  Además de facilitar la búsqueda de alojamiento, en Flatner también ofrecemos servicios adicionales para hacer que la experiencia de vivir compartiendo sea aún más placentera. Desde asistencia en la búsqueda de compañeros de piso compatibles hasta ayuda con el proceso de mudanza, estamos aquí para ayudarte en cada paso del camino.
+              </p>
+              <p className="mt-4 text-gray-500">
+                  Únete a nuestra comunidad en línea y descubre la comodidad y la emoción de vivir en un entorno compartido. ¡Empieza tu búsqueda hoy mismo en Flatner!
+              </p>
+          </div>
+          <div className="mt-16 grid grid-cols-1 gap-y-10 gap-x-8 lg:grid-cols-3">
+            {incentives.map((incentive) => (
+              <div key={incentive.name} className="sm:flex lg:block">
+                <div className="sm:flex-shrink-0">
+                  <img className="h-16 w-16" src={incentive.imageSrc} alt="" />
                 </div>
-              ))}
-            </div>
+                <div className="mt-4 sm:mt-0 sm:ml-6 lg:mt-6 lg:ml-0">
+                  <h3 className="text-sm font-medium text-gray-900">{incentive.name}</h3>
+                  <p className="mt-2 text-sm text-gray-500">{incentive.description}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
-    )
-  }
+    </div>
+  )
+}
+
+export default Incentives;

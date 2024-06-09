@@ -28,8 +28,12 @@ DJANGO_APPS = [
     'django.contrib.staticfiles',
 ]
 PROJECT_APPS = [
+    'apps.room',
+    'apps.flat',
+    'apps.address',
+    'apps.account',
+    'apps.incident',
     
-
 ]
 THIRD_PART_APPS = [
     'corsheaders',
