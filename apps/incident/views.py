@@ -20,9 +20,9 @@ class ListIncidentView(APIView):
                 item = {}
                 item['id'] = incident.id
                 item['title'] = incident.title
+                item['description'] = incident.description
                 item['incident_status'] = incident.incident_status
                 item['incident_date'] = incident.incident_date
-                item['description'] = incident.description
 
             result.append(item)
 
