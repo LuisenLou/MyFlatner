@@ -3,20 +3,25 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
-class Account(models.Models):
+class Account(models.Model):
     class Meta:
         verbose_name = 'Account'
         verbose_name_plural = 'Accounts'
 
-    GENRE_CHOICES:{
+    GENRE_CHOICES = (
         ('M', 'Masculino'),
         ('W', 'Femenino'),
         ('N', 'Prefiero no decirlo'),
-    }
-
+    )
+        
     OCUPATION_CHOICES = (
         ('Estudiante', 'Student'),
         ('Trabajador', 'Worker'),
+    )
+
+    ROLE_CHOICES = (
+        ('Inquilino', 'Tenant'),
+        ('Propietario', 'Landlord'),
     )
     
 
@@ -34,12 +39,7 @@ class Account(models.Models):
 
     profile_photo = models.ImageField(upload_to='/media/', blank=True, null=True)
 
-    description = models.TextField(max_lenght = 255, blank=True, null=True)
-
-    ROLE_CHOICES = (
-        ('Inquilino', 'Tenant'),
-        ('Propietario', 'Landlord'),
-    )
+    description = models.TextField(max_length = 255, blank=True, null=True)
 
     role = models.CharField(max_length = 10, choices = ROLE_CHOICES)
     #To add : interests

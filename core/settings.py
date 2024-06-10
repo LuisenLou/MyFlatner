@@ -33,6 +33,7 @@ PROJECT_APPS = [
     'apps.address',
     'apps.account',
     'apps.incident',
+    'apps.task',
     
 ]
 THIRD_PART_APPS = [
