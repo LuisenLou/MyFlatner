@@ -11,8 +11,8 @@ class Incident(models.Model):
 
 
     flat = models.ForeignKey(Flat, on_delete = models.CASCADE)
-    applicant = models.ForeignKey (Account, on_delete= models.CASCADE)
-    receiver = models.ForeignKey (Account, on_delete=models.CASCADE)
+    applicant = models.ForeignKey (Account, on_delete= models.CASCADE, related_name='applied_incidents')
+    receiver = models.ForeignKey (Account, on_delete=models.CASCADE, related_name='received_incidents')
 
     STATUS_CHOICES = (
         ('Aceptado', 'Accepted'),
@@ -20,6 +20,6 @@ class Incident(models.Model):
         ('Pendiente', 'Pending'),
     )
 
-    incident_status = models.CharField (max_length = 3, choices = STATUS_CHOICES)
+    incident_status = models.CharField (max_length = 20, choices = STATUS_CHOICES)
     incident_date = models.DateField(auto_now_add = True)
 

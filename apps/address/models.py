@@ -24,7 +24,7 @@ class Address(models.Model):
         )
 
 
-    via_class = models.CharField (choices = VIA_CHOICES)
+    via_class = models.CharField (max_length = 20,choices = VIA_CHOICES)
 
     via_name = models.CharField (max_length = 50 )
     via_number = models.IntegerField ()

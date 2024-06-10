@@ -22,12 +22,16 @@ class Flat(models.Model):
     area = models.IntegerField()
     address = models.ForeignKey(Address, on_delete=models.CASCADE)
 
+    renovated = models.BooleanField(default=None, null=True, blank=True)
+
+    elevator = models.BooleanField(default=None, null=True, blank=True)
+
 
     #Google Maps 
     latitude = models.FloatField(null=True, blank=True)
     longitude = models.FloatField(null=True, blank=True)
 
-    photos = models.ImageField(upload_to='/media/', blank=True, null=True)
+    photos = models.ImageField(upload_to='media/', blank=True, null=True)
 
     views = models.IntegerField(default = 0, blank = True)
 
@@ -71,7 +75,7 @@ def geocode_address(address):
 
 
 class ViewCount(models.Model):
-    flat = models.ForeignKey(Flat, related_name = 'room_view_count', on_delete = models.CASCADE)
+    flat = models.ForeignKey(Flat, related_name = 'flat_view_count', on_delete = models.CASCADE)
     ip_address = models.CharField(max_length = 255)
 
     def __str__(self):

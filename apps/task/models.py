@@ -15,7 +15,7 @@ class Task(models.Model):
         ('Aplazado', 'Posponed'),
     )
     title = models.CharField(max_length = 30, unique = True)
-    status = models.CharField(choices = STATUS_CHOICES)
+    status = models.CharField(max_length=15, choices = STATUS_CHOICES)
     task_date = models.DateField (auto_now_add = True)
     task_limit_date = models.DateField ()
     assigned_to = models.ForeignKey(Account, on_delete=models.CASCADE, related_name='tasks')
