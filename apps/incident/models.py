@@ -9,7 +9,7 @@ class Incident(models.Model):
         verbose_name = 'Incident'
         verbose_name_plural = 'Incidents'
 
-
+    title = models.CharField(max_length = 50)
     flat = models.ForeignKey(Flat, on_delete = models.CASCADE)
     applicant = models.ForeignKey (Account, on_delete= models.CASCADE, related_name='applied_incidents')
     receiver = models.ForeignKey (Account, on_delete=models.CASCADE, related_name='received_incidents')
@@ -20,6 +20,8 @@ class Incident(models.Model):
         ('Pendiente', 'Pending'),
     )
 
-    incident_status = models.CharField (max_length = 20, choices = STATUS_CHOICES)
+    incident_status = models.CharField (max_length = 20, default='Pendiente', choices = STATUS_CHOICES)
     incident_date = models.DateField(auto_now_add = True)
+
+    description = models.TextField(max_length = 255, blank=True, null=True)
 
