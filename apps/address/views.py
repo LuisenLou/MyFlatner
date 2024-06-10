@@ -30,7 +30,8 @@ class ListAddressView(APIView):
                 item['province_or_state'] = address.province_or_state
                 item['country'] = address.country
 
-            result.append(item)
+                result.append(item)
+                
 
             return Response({'Addresses': result}, status = status.HTTP_200_OK)
         else:
