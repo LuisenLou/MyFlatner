@@ -9,7 +9,7 @@ class Incident(models.Model):
         verbose_name = 'Incident'
         verbose_name_plural = 'Incidents'
 
-    title = models.CharField(max_length = 50)
+    title = models.CharField(max_length = 50, default='Temporary Default Title')
     flat = models.ForeignKey(Flat, on_delete = models.CASCADE)
     applicant = models.ForeignKey (Account, on_delete= models.CASCADE, related_name='applied_incidents')
     receiver = models.ForeignKey (Account, on_delete=models.CASCADE, related_name='received_incidents')
