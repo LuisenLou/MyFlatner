@@ -20,7 +20,6 @@ class Address(models.Model):
             ('VÍA', 'Vía'),
             ('PASAJE', 'Pasaje'),
             ('BULEVAR', 'Bulevar'),
-            # Añade más opciones según sea necesario
         )
 
 
@@ -32,7 +31,7 @@ class Address(models.Model):
     door = models.CharField(max_length=3, blank=True)
     postal_code = models.CharField(max_length=6)
     city = models.CharField(max_length=20)
-    state = models.CharField(max_length=20)
+    province_or_state = models.CharField(max_length=20)
     country = models.CharField(max_length=20)
 
 

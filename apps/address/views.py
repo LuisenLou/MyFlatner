@@ -29,8 +29,6 @@ class ListAddressView(APIView):
                 item['city'] = address.city
                 item['province_or_state'] = address.province_or_state
                 item['country'] = address.country
-                item['longitude'] = address.longitude
-                
 
             result.append(item)
 
