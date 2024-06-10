@@ -29,7 +29,7 @@ class Address(models.Model):
     via_class = models.CharField (max_length = 20,choices = VIA_CHOICES)
 
     via_name = models.CharField (max_length = 50 )
-    via_number = models.IntegerField ()
+    via_number = models.IntegerField (blank=True, null=True)
     floor = models.CharField(max_length=3, blank=True)
     door = models.CharField(max_length=3, blank=True)
     postal_code = models.CharField(max_length=6)
