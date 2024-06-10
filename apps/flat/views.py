@@ -8,8 +8,8 @@ from .models import Flat
 
 
 class ListFlatView(APIView):
-    permission_classes = (permissions.AllowAny)
-    #permission_classes = (permissions.IsAuthenticated)
+    permission_classes = (permissions.AllowAny,)
+    #permission_classes = (permissions.IsAuthenticated,)
 
     def get(self, request, format = None):
         if Flat.objects.all().exists():
@@ -19,7 +19,7 @@ class ListFlatView(APIView):
  
             for flat in flats:
                 item = {}
-                item['id']
+                item['id'] = flat.id
                 item['title'] = flat.title
                 item['description'] = flat.description
                 item['published'] = flat.published

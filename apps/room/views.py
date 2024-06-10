@@ -8,8 +8,8 @@ from .models import Room
 
 
 class ListRoomView(APIView):
-    permission_classes = (permissions.AllowAny)
-    permission_classes = (permissions.IsAuthenticated)
+    permission_classes = (permissions.AllowAny,)
+    #permission_classes = (permissions.IsAuthenticated,)
 
     def get(self, request, format =None):
         if Room.objects.all().exists():

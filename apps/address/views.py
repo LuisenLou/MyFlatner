@@ -8,7 +8,7 @@ from .models import Address
 
 
 class ListAddressView(APIView):
-    permission_classes = (permissions.AllowAny)
+    permission_classes = (permissions.AllowAny,)
     #permission_classes = (permissions.IsAuthenticated)
 
     def get(self, request, format = None):
@@ -19,7 +19,7 @@ class ListAddressView(APIView):
  
             for address in addresses:
                 item = {}
-                item['id']
+                item['id'] = address.id
                 item['via_class'] = address.via_class
                 item['via_name'] = address.via_name
                 item['via_number'] = address.via_number
@@ -34,4 +34,4 @@ class ListAddressView(APIView):
 
             return Response({'Addresses': result}, status = status.HTTP_200_OK)
         else:
-            return Response({'error': 'No flats found'}, status=status.HTTP_404_NOT_FOUND)
+            return Response({'error': 'No address found'}, status=status.HTTP_404_NOT_FOUND)
