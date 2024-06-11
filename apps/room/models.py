@@ -10,11 +10,10 @@ class Room(models.Model):
 
     flat = models.ForeignKey(Flat, on_delete = models.CASCADE, related_name = 'rooms')
     tenant = models.ForeignKey(Account, on_delete = models.SET_NULL, related_name = 'rented_rooms', null= True)
-    title = models.CharField(max_length=255, unique=True)
+    title = models.CharField(max_length=50, unique=True)
     
-    description = models.TextField(max_length=255, blank=True, null=True)
+    description = models.TextField(max_length=1000, blank=True, null=True)
     month_price = models.IntegerField()
-    room_class = models.CharField(max_length=255, unique=True)
     photos = models.ImageField(upload_to='media/', blank=True, null=True)
     available = models.BooleanField(default = True)
     available_date = models.DateTimeField()

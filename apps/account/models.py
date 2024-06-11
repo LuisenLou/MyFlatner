@@ -31,15 +31,15 @@ class Account(models.Model):
 
     birth_date = models.DateField()
     genre = models.CharField (max_length = 1, choices = GENRE_CHOICES)
-    country = models.CharField(max_length=20)
-    province_or_state = models.CharField(max_length=20)
-    city = models.CharField(max_length=20)
+    country = models.CharField(max_length=50)
+    province_or_state = models.CharField(max_length=50)
+    city = models.CharField(max_length=50)
     #Probably create the Ocupation Model to add more.
     ocupation = models.CharField(max_length=15,choices = OCUPATION_CHOICES)
 
     profile_photo = models.ImageField(upload_to='media/', blank=True, null=True)
 
-    description = models.TextField(max_length = 255, blank=True, null=True)
+    description = models.TextField(max_length = 1000, blank=True, null=True)
 
     role = models.CharField(max_length = 20, choices = ROLE_CHOICES)
     #To add : interests

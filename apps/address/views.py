@@ -9,7 +9,7 @@ from .models import Address
 
 class ListAddressView(APIView):
     permission_classes = (permissions.AllowAny,)
-    #permission_classes = (permissions.IsAuthenticated)
+    #permission_classes = (permissions.IsAuthenticated,)
 
     def get(self, request, format = None):
         if Address.objects.all().exists():

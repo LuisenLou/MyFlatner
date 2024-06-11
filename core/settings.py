@@ -34,6 +34,7 @@ PROJECT_APPS = [
     'apps.account',
     'apps.incident',
     'apps.task',
+    'apps.contact_form',
     
 ]
 THIRD_PART_APPS = [

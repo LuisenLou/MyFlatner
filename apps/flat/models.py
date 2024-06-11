@@ -1,5 +1,5 @@
 from django.db import models
-import requests
+import pip._vendor.requests as requests
 from apps.account.models import Account
 from apps.address.models import Address
 # Create your models here.
@@ -12,8 +12,8 @@ class Flat(models.Model):
 
     landlord = models.ForeignKey(Account, on_delete = models.CASCADE, related_name= 'owned_flats')
 
-    title = models.CharField(max_length = 255, unique=True )
-    description = models.TextField(max_length = 255)
+    title = models.CharField(max_length = 50, unique=True )
+    description = models.TextField(max_length = 1000)
 
     published = models.DateField(auto_now_add = True)
     num_rooms = models.IntegerField(default = 0, blank=True)

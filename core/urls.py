@@ -13,6 +13,7 @@ urlpatterns = [
     path('api/address/', include('apps.address.urls')),
     path('api/incident/', include('apps.incident.urls')),
     path('api/task/', include('apps.task.urls')),
+    path('api/contact/', include('apps.contact_form.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

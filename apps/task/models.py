@@ -14,7 +14,7 @@ class Task(models.Model):
         ('Terminado', 'Finished'),
         ('Aplazado', 'Posponed'),
     )
-    title = models.CharField(max_length = 30, unique = True)
+    title = models.CharField(max_length = 50, unique = True)
     status = models.CharField(max_length=15, choices = STATUS_CHOICES)
     task_date = models.DateField (auto_now_add = True)
     task_limit_date = models.DateField ()

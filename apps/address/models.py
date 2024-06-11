@@ -30,12 +30,12 @@ class Address(models.Model):
 
     via_name = models.CharField (max_length = 50 )
     via_number = models.IntegerField (blank=True, null=True)
-    floor = models.CharField(max_length=3, blank=True)
-    door = models.CharField(max_length=3, blank=True)
-    postal_code = models.CharField(max_length=6)
-    city = models.CharField(max_length=20)
-    province_or_state = models.CharField(max_length=20)
-    country = models.CharField(max_length=20)
+    floor = models.CharField(max_length=5, blank=True)
+    door = models.CharField(max_length=5, blank=True)
+    postal_code = models.CharField(max_length=20)
+    city = models.CharField(max_length=50)
+    province_or_state = models.CharField(max_length=50)
+    country = models.CharField(max_length=50)
 
 
     def __str__(self):
