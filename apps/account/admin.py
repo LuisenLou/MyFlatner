@@ -4,11 +4,7 @@ from .models import *
 # Register your models here.
 
 class AccountAdmin(admin.ModelAdmin):
-    list_display = ('id', 'username', 'genre', 'country', 'role')
-    list_display_links = ('username',)
-    list_filter = ('role', 'ocupation', 'genre', 'country', 'city')
-    search_fields = ('username', 'user__email', 'country', 'city')
-    ordering = ('username',)
-    list_per_page = 25
+    list_display = ('username', 'email', 'is_staff', 'is_editor')
+    search_fields = ('username','first_name', 'last_name', 'email', 'is_staff', 'is_editor',)
 
 admin.site.register(Account, AccountAdmin)

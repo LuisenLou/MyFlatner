@@ -2,6 +2,12 @@ from django.db import models
 import pip._vendor.requests as requests
 from apps.account.models import Account
 from apps.address.models import Address
+
+
+def flat_thumbnail_directory(instance, filename):
+    return 'flat/{0}/{1}'.format(instance.title, filename)
+
+
 # Create your models here.
 
 class Flat(models.Model):
@@ -10,21 +16,21 @@ class Flat(models.Model):
         verbose_name_plural = 'Flats'
 
 
-    landlord = models.ForeignKey(Account, on_delete = models.CASCADE, related_name= 'owned_flats')
+    landlord =                          models.ForeignKey(Account, on_delete = models.CASCADE, related_name= 'owned_flats')
 
-    title = models.CharField(max_length = 50, unique=True )
-    description = models.TextField(max_length = 1000)
+    title =                             models.CharField(max_length = 50, unique=True )
+    description =                       models.TextField(max_length = 1000)
 
-    published = models.DateField(auto_now_add = True)
-    num_rooms = models.IntegerField(default = 0, blank=True)
-    num_bathrooms = models.IntegerField(default = 1, blank=True)
+    published =                         models.DateField(auto_now_add = True)
+    num_rooms =                         models.IntegerField(default = 0, blank=True)
+    num_bathrooms =                     models.IntegerField(default = 1, blank=True)
 
-    area = models.IntegerField()
-    address = models.ForeignKey(Address, on_delete=models.CASCADE)
+    area =                              models.IntegerField()
+    address =                           models.ForeignKey(Address, on_delete=models.CASCADE)
 
-    renovated = models.BooleanField(default=None, null=True, blank=True)
+    renovated =                         models.BooleanField(default=None, null=True, blank=True)
 
-    elevator = models.BooleanField(default=None, null=True, blank=True)
+    elevator =                          models.BooleanField(default=None, null=True, blank=True)
 
 
     #Google Maps 
@@ -32,13 +38,6 @@ class Flat(models.Model):
     longitude = models.FloatField(null=True, blank=True)
 
     photos = models.ImageField(upload_to='media/', blank=True, null=True)
-
-    views = models.IntegerField(default = 0, blank = True)
-
-    def get_view_count(self):
-        views = ViewCount.objects.filter(Flat = self).count()
-        return views
-
 
     def save(self, *args, **kwargs):
         if self.address:
@@ -76,7 +75,11 @@ def geocode_address(address):
 
 class ViewCount(models.Model):
     flat = models.ForeignKey(Flat, related_name = 'flat_view_count', on_delete = models.CASCADE)
-    ip_address = models.CharField(max_length = 255)
+    ip_address = models.GenericIPAddressField(null=True, blank=True)
 
     def __str__(self):
         return f'{self.ip_address}'
+    
+    def get_view_count(self):
+        views = ViewCount.objects.filter(Flat = self).count()
+        return views
