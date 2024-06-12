@@ -32,12 +32,12 @@ class Flat(models.Model):
 
     elevator =                          models.BooleanField(default=None, null=True, blank=True)
 
-
+    view =                              models.IntegerField(null = True)
     #Google Maps 
-    latitude = models.FloatField(null=True, blank=True)
-    longitude = models.FloatField(null=True, blank=True)
+    latitude =                          models.FloatField(null=True, blank=True)
+    longitude =                         models.FloatField(null=True, blank=True)
 
-    photos = models.ImageField(upload_to='media/', blank=True, null=True)
+    photos =                            models.ImageField(upload_to='media/', blank=True, null=True)
 
     def save(self, *args, **kwargs):
         if self.address:
@@ -47,6 +47,9 @@ class Flat(models.Model):
                 self.longitude = lng
         super().save(*args, **kwargs)
 
+    def get_view_count(self):
+        views = ViewCount.objects.filter(Flat = self).count()
+        return views
 
 def geocode_address(address):
     params = {
@@ -80,6 +83,4 @@ class ViewCount(models.Model):
     def __str__(self):
         return f'{self.ip_address}'
     
-    def get_view_count(self):
-        views = ViewCount.objects.filter(Flat = self).count()
-        return views
+    
