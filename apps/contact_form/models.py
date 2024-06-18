@@ -14,10 +14,23 @@ class Contact_form(models.Model):
         ('Petición', 'Claim'),
         ('Opinion', 'Opinion'),
     )
+    FORM_CHOICES = (
+        ('Sugerencia', 'Suggest'),
+        ('Duda', 'Query'),
+        ('Petición', 'Claim'),
+        ('Opinion', 'Opinion'),
+    )
 
+    VIA_CHOICES = (
+        ('Calle', 'Calle'),
+        ('Avenida', 'Avenida'),
+        ('Plaza', 'Plaza'),
+        ('Carretera', 'Carretera'),
+        ('Paseo', 'Paseo'),
+        ('Ronda', 'Ronda'),
+    )    
 
-    title =                         models.CharField(max_length = 50)
-    form_class =                    models.CharField(max_length = 30 , choices = FORM_CHOICES)
+    reason =                        models.CharField(max_length = 30 , choices = FORM_CHOICES)
 
     first_name =                    models.CharField(max_length = 50)
     last_name =                     models.CharField(max_length = 50)
@@ -26,8 +39,9 @@ class Contact_form(models.Model):
     country =                       models.CharField(max_length = 50)
     city =                          models.CharField(max_length=50, null=True, blank=True)
     region =                        models.CharField(max_length=50, null=True, blank=True)
-    street =                        models.CharField(max_length=100, null=True, blank=True)
-    postal_code =                   models.CharField(max_length = 20)
+    via =                           models.CharField(max_length = 30 , choices = VIA_CHOICES, null=True, blank=True)
+    address_name =                  models.CharField(max_length=100, null=True, blank=True)
+    postal_code =                   models.CharField(max_length = 20, null=True, blank=True)
 
     description =                   models.TextField(max_length = 1000)
 

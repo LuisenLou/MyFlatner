@@ -8,11 +8,11 @@ const navigation = {
     support: [
       { name: 'Owner Guide', href: '#' },
       { name: 'Tenant Guide', href: '#' },
-      { name: 'Map', href: '#' },
+      { name: 'Map', href: '/busqueda' },
     ],
     company: [
-      { name: 'Information', href: '#' },
-      { name: 'Contact', href: '#' },
+      { name: 'Information', href: '/nosotros' },
+      { name: 'Contact', href: '/contacto' },
       { name: 'Partners', href: '#' },
     ],
     legal: [

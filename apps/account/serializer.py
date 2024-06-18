@@ -2,13 +2,15 @@ from djoser.serializers import UserCreateSerializer
 from .models import *
 
 from django.contrib.auth import get_user_model
-Account = get_user_model
+
+
+Account = get_user_model()
 
 class AccountSerializer(UserCreateSerializer):
     class Meta:
         model = Account
         fields = [
-            'id'
+            'id',
             'email',
             'username',
             'first_name',

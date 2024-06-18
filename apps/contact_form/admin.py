@@ -4,10 +4,10 @@ from .models import Contact_form
 
 
 class ContactFormAdmin(admin.ModelAdmin):
-    list_display = ('id', 'title', 'form_class', 'first_name', 'last_name', 'email', 'country', 'city', 'region', 'street', 'postal_code', 'created_at', 'ip_address')
-    list_display_links = ('id', 'title')
-    list_filter = ('form_class', 'country', 'created_at')
-    search_fields = ('title', 'first_name', 'last_name', 'email', 'country', 'city', 'region', 'street')
+    list_display = ('id', 'reason', 'reason', 'first_name', 'last_name', 'email', 'country', 'city', 'region','via', 'address_name', 'postal_code', 'created_at', 'ip_address')
+    list_display_links = ('id', 'reason')
+    list_filter = ('reason', 'country', 'created_at')
+    search_fields = ('reason', 'first_name', 'last_name', 'email', 'country', 'city', 'region', 'via', 'address_name')
     ordering = ('-created_at',)
     list_per_page = 25
 

@@ -3,6 +3,8 @@ from pathlib import Path
 import os
 import environ
 
+
+
 env = environ.Env()
 environ.Env.read_env()
 
@@ -18,8 +20,10 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG')
 
-ALLOWED_HOSTS = env.list('ALLOWED_HOSTS_DEV')
+ALLOWED_HOSTS_DEV = env.list('ALLOWED_HOSTS_DEV', default=['127.0.0.1', 'localhost'])
+ALLOWED_HOSTS_DEPLOY = env.list('ALLOWED_HOSTS_DEPLOY', default=[])
 
+#ALLOWED_HOSTS = env.list('ALLOWED_HOSTS_DEV', default=['127.0.0.1', 'localhost'])
 
 # Application definition
 
@@ -169,7 +173,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES':  [
-        'rest_framework.permissions.IsAuthenticatedOrReadOnly'
+        'rest_framework.permissions.AllowAny'
      ],
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
@@ -177,16 +181,32 @@ REST_FRAMEWORK = {
 }
 
 
-CORS_ORIGIN_WHITELIST = env.list('CORS_ORIGIN_WHITELIST_DEV')
-CRSF_TRUSTED_ORIGINS = env.list('CSRF_TRUSTED_ORIGINS_DEV')
+
+# CORS configuration
+CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:3001',
+    'http://localhost:3000',
+]
+
+# CSRF configuration
+CSRF_TRUSTED_ORIGINS = [
+    'http://localhost:3000',
+    'http://localhost:3001',
+]
+#CORS_ORIGIN_WHITELIST = env.list('CORS_ORIGIN_WHITELIST_DEV', default=[])
+#CRSF_TRUSTED_ORIGINS = env.list('CSRF_TRUSTED_ORIGINS_DEV', default=[])
+
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
+# JWT settings
 SIMPLE_JWT = {
-    'AUTH_HEADER_TYPES': ('JWT', ),
+    'AUTH_HEADER_TYPES': ('JWT',),
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=10080),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=30),
-    'ROTATE_REFRESFH_TOKENS':True,
+    'ROTATE_REFRESH_TOKENS': True,
     'BLACKLIST_AFTER_ROTATION': True,
     'AUTH_TOKEN_CLASSES': (
         'rest_framework_simplejwt.tokens.AccessToken',
@@ -194,14 +214,15 @@ SIMPLE_JWT = {
     #TOKEN_OBTAIN_SERIALIZER:  - ROLE   DEF: PAYLOAD -
 }
 
+# Djoser settings
 DJOSER = {
     'LOGIN_FIELD': 'email',
     'USERNAME_CHANGED_EMAIL_CONFIRMATION': True,
-    'PASSWORD_CHANGED_eMAIL_CONFIRMATION': True,
+    'PASSWORD_CHANGED_EMAIL_CONFIRMATION': True,
     'SEND_CONFIRMATION_EMAIL': True,
     'SEND_ACTIVATION_EMAIL': True,
     'SET_USERNAME_RETYPE': True,
-    'SET_PASSSWORD_RETYPE': True,
+    'SET_PASSWORD_RETYPE': True,
     'PASSWORD_RESET_CONFIRM_RETYPE': True,
     'USER_CREATE_PASSWORD_RETYPE': True,
     'PASSWORD_RESET_CONFIRM_URL': '/password/reset/confirm/{uid}/{token}',
@@ -209,17 +230,16 @@ DJOSER = {
     'ACTIVATION_URL': '/activate/{uid}/{token}',
     'SEND_ACTIVATION_EMAIL': True,
     'SOCIAL_AUTH_TOKEN_STRATEGY': 'djoser.social.token.jwt.TokenStrategy',
-    'SOCIAL_AUTH_ALLOWED_REDIRECT_URLS': ['http:localhost:8000/google'],
+    'SOCIAL_AUTH_ALLOWED_REDIRECT_URLS': ['http://localhost:8000/google'],
     'SERIALIZERS': {
-            'user_create': 'apps.account.serializers.AccountSerializer',
-            'user': 'apps.account.serializer.AccountSerializer',
-            'current_user': 'apps.account.serializer.AccountSerializer',
-            'user_delete': 'djoser.serializers.AccountDeleteSerializer',
+        'user_create': 'apps.account.serializer.AccountSerializer',
+        'user': 'apps.account.serializer.AccountSerializer',
+        'current_user': 'apps.account.serializer.AccountSerializer',
+        'user_delete': 'djoser.serializer.UserDeleteSerializer',
     },
 }
 
 AUTH_USER_MODEL = 'account.Account'
-
 
 if not DEBUG:
     ALLOWED_HOSTS=env.list('ALLOWED_HOSTS_DEPLOY')

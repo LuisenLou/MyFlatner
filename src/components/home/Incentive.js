@@ -1,27 +1,35 @@
+import social from '../../assets/img/chromicons/social.svg'
+import services from '../../assets/img/chromicons/services.svg'
+import security from '../../assets/img/chromicons/security.svg'
+import filter from '../../assets/img/chromicons/filter.svg'
+import phone from '../../assets/img/chromicons/phone.svg'
+
+
+
 const incentives = [
     {
         name: 'Interacción Social',
-        imageSrc: 'https://tailwindui.com/img/ecommerce/icons/icon-shipping-simple.svg',
+        imageSrc: social,
         description: "Con nuestra aplicación, puedes interactuar con otros usuarios fácilmente. Comunícate con propietarios y posibles compañeros de piso para encontrar la mejor opción que se adapte a tus necesidades.",
     },
     {
         name: 'Servicios Adicionales: ',
-        imageSrc: 'https://tailwindui.com/img/ecommerce/icons/icon-warranty-simple.svg',
+        imageSrc: services,
         description: "Ofrecemos servicios adicionales útiles para hacer tu búsqueda más fácil. Desde asistencia en la búsqueda de compañeros de piso compatibles hasta ayuda con el proceso de mudanza, estamos aquí para ayudarte en cada paso del camino.",
     },
     {
         name: 'Seguridad y Confianza:',
-        imageSrc: 'https://tailwindui.com/img/ecommerce/icons/icon-exchange-simple.svg',
+        imageSrc: security,
         description: "Tu seguridad es nuestra prioridad. Implementamos medidas de seguridad robustas, incluyendo verificación de usuarios, evaluaciones y comentarios de otros usuarios, para garantizar una experiencia segura y confiable para todos.",
     },
     {
         name: 'Filtrado Avanzado:',
-        imageSrc: 'https://tailwindui.com/img/ecommerce/icons/icon-exchange-simple.svg',
+        imageSrc: filter,
         description: "Con nuestro sistema de filtrado avanzado, puedes personalizar tu búsqueda según tus preferencias específicas. Filtra por precio, ubicación, comodidades y más, para encontrar la habitación perfecta para ti.",
     },
     {
         name: 'Facilidad de Uso:',
-        imageSrc: 'https://tailwindui.com/img/ecommerce/icons/icon-exchange-simple.svg',
+        imageSrc: phone,
         description: "Nuestra aplicación es intuitiva y fácil de navegar. Con una interfaz de usuario sencilla y amigable, encontrarás lo que buscas en cuestión de minutos.",
     },
   ]
@@ -32,7 +40,7 @@ function Incentives() {
       <div className="mx-auto lg:mx-12 max-w-full sm:px-2 sm:py-32 lg:px-4">
         <div className="mx-auto max-w-2xl px-4 lg:max-w-none">
           <div className="max-w-3xl">
-              <h2 className="text-4xl font-bold tracking-tight text-gray-900">
+              <h2 className="text-4xl font-bold tracking-tight text-gray-900 mb-9">
                   Facilitamos la interacción entre personas.
               </h2>
               <p className="mt-4 text-gray-500">

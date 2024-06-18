@@ -16,7 +16,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('title', models.CharField(max_length=50)),
-                ('form_class', models.CharField(choices=[('Sugerencia', 'Suggest'), ('Duda', 'Query'), ('Petición', 'Claim'), ('Opinion', 'Opinion')], max_length=30)),
+                ('reason', models.CharField(choices=[('Sugerencia', 'Suggest'), ('Duda', 'Query'), ('Petición', 'Claim'), ('Opinion', 'Opinion')], max_length=30)),
                 ('first_name', models.CharField(max_length=50)),
                 ('last_name', models.CharField(max_length=50)),
                 ('email', models.EmailField(max_length=100)),

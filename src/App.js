@@ -1,13 +1,8 @@
-import Home from "containers/pages/Home";
-import Search from "containers/pages/Search";
-import AboutUs from "containers/pages/AboutUs";
-import Communicate from "containers/pages/Communicate";
-import Sign from 'containers/pages/Sign'
-import Error404 from "containers/error/Error404";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import { Provider } from "react-redux";
-import store from "store";
+import store from "./store";
 import { Helmet, HelmetProvider } from 'react-helmet-async';
+import AnimatedRoutes from './hocs/routes/routes'
 
 function App() {
   
@@ -19,27 +14,13 @@ function App() {
         <meta name='keywords' content='pisos, habitaciones, propietario, inquilino'/>
         <meta name='author' content='LuisenLou'/>
         <meta name='publisher' content='Flatner'/>
-        
-        
-        <link rel='can' href='https://localhost:8000'/>
+        <meta name="robots" content='all' />
+        <meta property="og:title" content='Flatner | Web' />
+        <link rel='canonical' href='https://localhost:8000'/>
       </Helmet>
       <Provider store={store}>
           <Router>
-            <Routes>
-              {/*Error display*/}
-              <Route path='*' element={<Error404/>}/>
-              
-              {/*Pages display*/}
-              <Route path='/' element={<Home/>}/>
-              <Route path='/busqueda' element={<Search/>}/>
-              <Route path='/nosotros' element={<AboutUs/>}/>
-              <Route path='/contacto' element={<Communicate/>}/>
-
-              {/*Sesion display*/}
-              <Route path='/sesion' element={<Sign/>}/>
-              
-              
-            </Routes>
+            <AnimatedRoutes/>
           </Router>
       </Provider>
     </HelmetProvider>
